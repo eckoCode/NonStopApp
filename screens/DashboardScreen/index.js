@@ -55,15 +55,17 @@ export default class DashboardScreen extends Component {
     this.props.navigation.navigate('Sync');
   };
 
+  onSettingsPress = () => {
+    this.props.navigation.navigate('Settings');
+  };
+
   render() {
     return (
       <Container style={{ backgroundColor: colors.white }}>
         <Header style={{ backgroundColor: colors.white }}>
           <Left />
           <Body>
-            <Title style={{ color: colors.primary, fontFamily: 'Quicksand' }}>
-              Dashboard
-            </Title>
+            <Title style={styles.titleHeader}>Dashboard</Title>
           </Body>
           <Right>
             <Button transparent onPress={this.onSignOutPress}>
@@ -81,7 +83,7 @@ export default class DashboardScreen extends Component {
               <View style={{ flex: 1 }}>
                 <Image
                   source={require('../../assets/profile.png')}
-                  style={{ width: 75, height: 75, borderRadius: 37.5 }}
+                  style={styles.avatar}
                 />
               </View>
               <View style={{ flex: 3, justifyContent: 'center' }}>
@@ -97,10 +99,10 @@ export default class DashboardScreen extends Component {
                     flexDirection: 'row',
                   }}
                 >
-                  <Text note style={{ padding: 5, fontFamily: 'Quicksand' }}>
+                  <Text note style={styles.textUser}>
                     23 yrs
                   </Text>
-                  <Text note style={{ padding: 5, fontFamily: 'Quicksand' }}>
+                  <Text note style={styles.textUser}>
                     69 kg
                   </Text>
                 </View>
@@ -108,9 +110,7 @@ export default class DashboardScreen extends Component {
             </View>
             <View>
               <Card>
-                <CardItem
-                  style={{ borderRadius: 16, backgroundColor: colors.white }}
-                >
+                <CardItem style={styles.graphCard}>
                   <LineChart
                     data={data}
                     width={screenWidth - 40}
@@ -129,7 +129,7 @@ export default class DashboardScreen extends Component {
                       type="MaterialCommunityIcons"
                       name="map-marker-distance"
                     />
-                    <Text style={{ fontFamily: 'Quicksand' }}>30.0 km</Text>
+                    <Text style={styles.textUser}>30.0 km</Text>
                   </Left>
                   <Body />
                   <Right>
@@ -144,9 +144,7 @@ export default class DashboardScreen extends Component {
                         type="MaterialCommunityIcons"
                         name="timer"
                       />
-                      <Text style={{ padding: 5, fontFamily: 'Quicksand' }}>
-                        2h 30m
-                      </Text>
+                      <Text style={styles.textUser}>2h 30m</Text>
                     </View>
                   </Right>
                 </CardItem>
@@ -162,7 +160,7 @@ export default class DashboardScreen extends Component {
             <Button>
               <Icon style={{ color: colors.primary }} name="bicycle" />
             </Button>
-            <Button>
+            <Button onPress={this.onSettingsPress}>
               <Icon style={{ color: colors.primary }} name="settings" />
             </Button>
           </FooterTab>

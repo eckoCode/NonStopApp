@@ -25,5 +25,22 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: colors.white,
   },
+  titleHeader: {
+    color: colors.primary,
+    fontFamily: 'Quicksand',
+  },
+  avatar: {
+    width: 75,
+    height: 75,
+    borderRadius: 37.5,
+  },
+  textUser: {
+    padding: 5,
+    fontFamily: 'Quicksand',
+  },
+  graphCard: {
+    borderRadius: 16,
+    backgroundColor: colors.white,
+  },
 });
 export default styles;

@@ -6,6 +6,10 @@ import LoginScreen from './screens/LoginScreen';
 import SignUpScreen from './screens/SignUpScreen';
 import DashboardScreen from './screens/DashboardScreen';
 import SyncScreen from './screens/SyncScreen';
+import SettingsScreen from './screens/SettingsScreen';
+import AppSettingsScreen from './screens/AppSettingsScreen';
+import ProfileSettingsScreen from './screens/ProfileSettingsScreen';
+import AboutScreen from './screens/AboutScreen';
 
 import { metrics } from './styles';
 import { Ionicons } from '@expo/vector-icons';
@@ -73,6 +77,10 @@ const AppNavigator = createStackNavigator(
     SignUp: { screen: SignUpScreen },
     Dashboard: { screen: DashboardScreen },
     Sync: { screen: SyncScreen },
+    Settings: { screen: SettingsScreen },
+    ProfileSettings: { screen: ProfileSettingsScreen },
+    About: { screen: AboutScreen },
+    AppSettings: { screen: AppSettingsScreen },
   },
   {
     initialRouteName: 'Login',
